@@ -17,15 +17,15 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 ## Demo
 
-![Screenshot](http://jonreiling.com/webex/webex-computer-screenshot.jpg)
+![Screenshot](http://jonreiling.com/webex/webex-video.jpg)
 
-[View on Youtube](https://www.youtube.com/watch?v=SsEOLQwKBjE)
+[View on Youtube](https://youtu.be/szfNf6FaQPI)
 
 ## What's next
 
 As you can see from the video, the status indicators and button are pretty raw. Next up: build a more permanent enclosure. (Perhaps an "On Air" sign?)
 
-And while this is helpful for me as an individual, I could imagine this being useful as a way to let family members know that you're on a conference call. An external status sign outside your office door could be pretty useful... 
+And while this is helpful for me as an individual, I could imagine this being useful as a way to let family members know that you're on a conference call. An external status sign outside your office door could be pretty useful...
 
 ## Closing thoughts
 
