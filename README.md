@@ -19,7 +19,7 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 ![Screenshot](http://jonreiling.com/webex/webex-video.jpg)
 
-[View on Youtube](https://youtu.be/szfNf6FaQPI)
+[View on Youtube](https://youtu.be/0hhCqMGTCo0)
 
 ## What's next
 
