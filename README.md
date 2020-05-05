@@ -25,7 +25,7 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 As you can see from the video, the status indicators and button are pretty raw. Next up: build a more permanent enclosure. (Perhaps an "On Air" sign?)
 
-And while this is helpful for me as an individual, I could imagine this being useful as a way to let family members know that you're on a conference call. An external status sign outside your office/bedroom/closet door could be pretty cool...
+And while this is handy for me as an individual, I could imagine this being incredibly useful as a way to let family members know that you're on a conference call. Just think: An external status sign outside your office/bedroom/closet door could be pretty cool...
 
 ## Closing thoughts
 
