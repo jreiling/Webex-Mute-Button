@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WebEx-Mute-Button
+
+  Created by Jon Reiling on 5/4/20.
+  Copyright © 2020 Jon Reiling. All rights reserved.
+*/
+"inactive-not-running" = "Status: Webex is not running";
+"inactive-no-meeting" = "Status: No active meeting";
+"active-muted" = "Status: Webex is muted";
+"active-not-muted" = "Status: Webex is unmuted";
+"error" = "Status: There was an error";

@@ -1,0 +1,399 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 52;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6B5970DB245DC0C90061555D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B5970DA245DC0C90061555D /* AppDelegate.swift */; };
+		6B5970DF245DC0CB0061555D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6B5970DE245DC0CB0061555D /* Assets.xcassets */; };
+		6B60F147245F808F00D6A15C /* ExternalStatusButtonManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60F146245F808F00D6A15C /* ExternalStatusButtonManager.swift */; };
+		6B60F149245FA3EB00D6A15C /* WebexManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6B60F148245FA3EB00D6A15C /* WebexManager.swift */; };
+		6B74E99A2460C366001FB293 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E9992460C366001FB293 /* Localizable.strings */; };
+		6B74E99D2460DFD0001FB293 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E99B2460DFD0001FB293 /* Main.storyboard */; };
+		6B74E9A42461240F001FB293 /* webex-mute-fast.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E9A3246123A2001FB293 /* webex-mute-fast.scpt */; };
+		6B74E9A524612412001FB293 /* webex-mute-safe.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E99E246123A2001FB293 /* webex-mute-safe.scpt */; };
+		6B74E9A624612412001FB293 /* webex-status-fast.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E99F246123A2001FB293 /* webex-status-fast.scpt */; };
+		6B74E9A724612412001FB293 /* webex-status-safe.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E9A1246123A2001FB293 /* webex-status-safe.scpt */; };
+		6B74E9A824612412001FB293 /* webex-unmute-fast.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E9A0246123A2001FB293 /* webex-unmute-fast.scpt */; };
+		6B74E9A924612412001FB293 /* webex-unmute-safe.scpt in Resources */ = {isa = PBXBuildFile; fileRef = 6B74E9A2246123A2001FB293 /* webex-unmute-safe.scpt */; };
+		6BB852DB245E11AD003800D1 /* ORSSerial in Frameworks */ = {isa = PBXBuildFile; productRef = 6BB852DA245E11AD003800D1 /* ORSSerial */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		6B5970D7245DC0C90061555D /* WebEx-Mute-Button.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WebEx-Mute-Button.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6B5970DA245DC0C90061555D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		6B5970DE245DC0CB0061555D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		6B5970E3245DC0CB0061555D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6B5970E4245DC0CB0061555D /* WebEx_Mute_Button.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WebEx_Mute_Button.entitlements; sourceTree = "<group>"; };
+		6B60F146245F808F00D6A15C /* ExternalStatusButtonManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalStatusButtonManager.swift; sourceTree = "<group>"; };
+		6B60F148245FA3EB00D6A15C /* WebexManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebexManager.swift; sourceTree = "<group>"; };
+		6B74E9992460C366001FB293 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		6B74E99C2460DFD0001FB293 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		6B74E99E246123A2001FB293 /* webex-mute-safe.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-mute-safe.scpt"; sourceTree = "<group>"; };
+		6B74E99F246123A2001FB293 /* webex-status-fast.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-status-fast.scpt"; sourceTree = "<group>"; };
+		6B74E9A0246123A2001FB293 /* webex-unmute-fast.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-unmute-fast.scpt"; sourceTree = "<group>"; };
+		6B74E9A1246123A2001FB293 /* webex-status-safe.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-status-safe.scpt"; sourceTree = "<group>"; };
+		6B74E9A2246123A2001FB293 /* webex-unmute-safe.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-unmute-safe.scpt"; sourceTree = "<group>"; };
+		6B74E9A3246123A2001FB293 /* webex-mute-fast.scpt */ = {isa = PBXFileReference; lastKnownFileType = file; path = "webex-mute-fast.scpt"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6B5970D4245DC0C90061555D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6BB852DB245E11AD003800D1 /* ORSSerial in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6B5970CE245DC0C90061555D = {
+			isa = PBXGroup;
+			children = (
+				6B5970D9245DC0C90061555D /* WebEx-Mute-Button */,
+				6B5970D8245DC0C90061555D /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6B5970D8245DC0C90061555D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6B5970D7245DC0C90061555D /* WebEx-Mute-Button.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6B5970D9245DC0C90061555D /* WebEx-Mute-Button */ = {
+			isa = PBXGroup;
+			children = (
+				6B5970DA245DC0C90061555D /* AppDelegate.swift */,
+				6B60F146245F808F00D6A15C /* ExternalStatusButtonManager.swift */,
+				6B60F148245FA3EB00D6A15C /* WebexManager.swift */,
+				6B5970EA245DC1340061555D /* scripts */,
+				6B5970DE245DC0CB0061555D /* Assets.xcassets */,
+				6B5970E3245DC0CB0061555D /* Info.plist */,
+				6B74E99B2460DFD0001FB293 /* Main.storyboard */,
+				6B74E9992460C366001FB293 /* Localizable.strings */,
+				6B5970E4245DC0CB0061555D /* WebEx_Mute_Button.entitlements */,
+			);
+			path = "WebEx-Mute-Button";
+			sourceTree = "<group>";
+		};
+		6B5970EA245DC1340061555D /* scripts */ = {
+			isa = PBXGroup;
+			children = (
+				6B74E9A3246123A2001FB293 /* webex-mute-fast.scpt */,
+				6B74E99E246123A2001FB293 /* webex-mute-safe.scpt */,
+				6B74E99F246123A2001FB293 /* webex-status-fast.scpt */,
+				6B74E9A1246123A2001FB293 /* webex-status-safe.scpt */,
+				6B74E9A0246123A2001FB293 /* webex-unmute-fast.scpt */,
+				6B74E9A2246123A2001FB293 /* webex-unmute-safe.scpt */,
+			);
+			path = scripts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6B5970D6245DC0C90061555D /* WebEx-Mute-Button */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6B5970E7245DC0CB0061555D /* Build configuration list for PBXNativeTarget "WebEx-Mute-Button" */;
+			buildPhases = (
+				6B5970D3245DC0C90061555D /* Sources */,
+				6B5970D4245DC0C90061555D /* Frameworks */,
+				6B5970D5245DC0C90061555D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WebEx-Mute-Button";
+			packageProductDependencies = (
+				6BB852DA245E11AD003800D1 /* ORSSerial */,
+			);
+			productName = "WebEx-Mute-Button";
+			productReference = 6B5970D7245DC0C90061555D /* WebEx-Mute-Button.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6B5970CF245DC0C90061555D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1130;
+				LastUpgradeCheck = 1130;
+				ORGANIZATIONNAME = "Jon Reiling";
+				TargetAttributes = {
+					6B5970D6245DC0C90061555D = {
+						CreatedOnToolsVersion = 11.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 6B5970D2245DC0C90061555D /* Build configuration list for PBXProject "WebEx-Mute-Button" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6B5970CE245DC0C90061555D;
+			packageReferences = (
+				6BB852D9245E11AD003800D1 /* XCRemoteSwiftPackageReference "ORSSerialPort" */,
+			);
+			productRefGroup = 6B5970D8245DC0C90061555D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6B5970D6245DC0C90061555D /* WebEx-Mute-Button */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6B5970D5245DC0C90061555D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B5970DF245DC0CB0061555D /* Assets.xcassets in Resources */,
+				6B74E99A2460C366001FB293 /* Localizable.strings in Resources */,
+				6B74E9A42461240F001FB293 /* webex-mute-fast.scpt in Resources */,
+				6B74E9A724612412001FB293 /* webex-status-safe.scpt in Resources */,
+				6B74E9A624612412001FB293 /* webex-status-fast.scpt in Resources */,
+				6B74E99D2460DFD0001FB293 /* Main.storyboard in Resources */,
+				6B74E9A524612412001FB293 /* webex-mute-safe.scpt in Resources */,
+				6B74E9A924612412001FB293 /* webex-unmute-safe.scpt in Resources */,
+				6B74E9A824612412001FB293 /* webex-unmute-fast.scpt in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6B5970D3245DC0C90061555D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6B60F149245FA3EB00D6A15C /* WebexManager.swift in Sources */,
+				6B60F147245F808F00D6A15C /* ExternalStatusButtonManager.swift in Sources */,
+				6B5970DB245DC0C90061555D /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		6B74E99B2460DFD0001FB293 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6B74E99C2460DFD0001FB293 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		6B5970E5245DC0CB0061555D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6B5970E6245DC0CB0061555D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		6B5970E8245DC0CB0061555D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WebEx-Mute-Button/WebEx_Mute_Button.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 944G3SL5X4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "WebEx-Mute-Button/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reiling.WebEx-Mute-Button";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		6B5970E9245DC0CB0061555D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "WebEx-Mute-Button/WebEx_Mute_Button.entitlements";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 944G3SL5X4;
+				ENABLE_HARDENED_RUNTIME = YES;
+				INFOPLIST_FILE = "WebEx-Mute-Button/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.reiling.WebEx-Mute-Button";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6B5970D2245DC0C90061555D /* Build configuration list for PBXProject "WebEx-Mute-Button" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5970E5245DC0CB0061555D /* Debug */,
+				6B5970E6245DC0CB0061555D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6B5970E7245DC0CB0061555D /* Build configuration list for PBXNativeTarget "WebEx-Mute-Button" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6B5970E8245DC0CB0061555D /* Debug */,
+				6B5970E9245DC0CB0061555D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		6BB852D9245E11AD003800D1 /* XCRemoteSwiftPackageReference "ORSSerialPort" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/armadsen/ORSSerialPort.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		6BB852DA245E11AD003800D1 /* ORSSerial */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 6BB852D9245E11AD003800D1 /* XCRemoteSwiftPackageReference "ORSSerialPort" */;
+			productName = ORSSerial;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 6B5970CF245DC0C90061555D /* Project object */;
+}
