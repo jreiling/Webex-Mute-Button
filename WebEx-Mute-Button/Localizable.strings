@@ -5,8 +5,8 @@
   Created by Jon Reiling on 5/4/20.
   Copyright © 2020 Jon Reiling. All rights reserved.
 */
-"inactive-not-running" = "Status: Webex is not running";
-"inactive-no-meeting" = "Status: No active meeting";
-"active-muted" = "Status: Webex is muted";
-"active-not-muted" = "Status: Webex is unmuted";
+"inactive-not-running" = "Webex is not running";
+"inactive-no-meeting" = "No Webex active meeting";
+"active-muted" = "Webex meeting is active";
+"active-not-muted" = "Webex meeting is active";
 "error" = "Status: There was an error";
