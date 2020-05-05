@@ -11,7 +11,7 @@ So I've created a macOS menu app to keep tabs on Webex and relay its state to an
 
 ## How it works
 
-Going to Cisco API route would be overkill. I didn't want to mess with authentication and, frankly, didn't need it. Instead, I turned to Applescript, which allowed me to read the values of Webex's menu bars. Cheeky! 💅🏻
+Going the Cisco API route would be overkill—I didn't want to mess with authentication and, frankly, didn't need it. Instead, I turned to Applescript, which allowed me to read the values of Webex's menu bars. Cheeky! 💅🏻
 
 From there, a macOS swift app manages communication between Applescript and a [Teensy LC](https://www.sparkfun.com/products/13305) via a Serial connection. Two external LEDs indicate mute status (or turn off if there isn't a meeting) and a button allows me to quickly toggle the mute state in the Webex app.
 
