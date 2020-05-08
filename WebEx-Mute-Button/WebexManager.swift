@@ -25,15 +25,18 @@ class WebexManager:NSObject  {
   
     static let shared = WebexManager()
     var webexState:WebexState = .stateInactiveNotRunning
+    var predicatedFutureState:WebexState?
     var statusTimer:Timer?
+    var timeoutInterval:Double = 0.1
 
-    public func startPolling(timeout:Double = 0.4){
+    public func startPolling(){
         
         statusTimer?.invalidate()
-        statusTimer = Timer.scheduledTimer(withTimeInterval: timeout, repeats: true, block: { _ in
-             self.updateState()
-         })
-        
+        statusTimer = Timer.scheduledTimer(timeInterval: timeoutInterval,
+                                           target: self,
+                                           selector: #selector(updateState),
+                                           userInfo: nil,
+                                           repeats: false)
     }
     
     public func mute() {
@@ -42,11 +45,12 @@ class WebexManager:NSObject  {
         if ( webexState != .stateActiveNotMuted ) { return }
         
         DispatchQueue.global(qos: .userInteractive).async {
-            let _ = self.runScript(scriptName: "webex-mute-fast")
+            self.runScript(scriptName: "webex-mute-fast")
         }
         
-        // Shh.... need to implement as willChangeWebexState
-        ExternalStatusButtonManager.shared.setButtonState(state: .statusActiveRed)
+        // Shh.... need to to find a better workaround for this
+        setPredictedFutureState(newFutureState: .stateActiveMuted)
+        
     }
     
     public func unmute() {
@@ -55,11 +59,11 @@ class WebexManager:NSObject  {
         if ( webexState != .stateActiveMuted ) { return }
 
         DispatchQueue.global(qos: .userInteractive).async {
-            let _ = self.runScript(scriptName: "webex-unmute-fast")
+            self.runScript(scriptName: "webex-unmute-fast")
         }
-
-        // Shh.... need to implement as willChangeWebexState
-        ExternalStatusButtonManager.shared.setButtonState(state: .statusActiveGreen)
+        
+        // Shh.... need to to find a better workaround for this
+        setPredictedFutureState(newFutureState: .stateActiveNotMuted)
     }
     
     public func toggleMute() {
@@ -75,19 +79,32 @@ class WebexManager:NSObject  {
         
     }
     
-    func updateState() {
+    @objc func updateState() {
 
-        DispatchQueue.global(qos: .userInteractive).async {
-            
+        DispatchQueue.global(qos: .utility).async {
+
             let newStateString = self.runScript(scriptName: "webex-status-fast")
             let newState = WebexState(rawValue: newStateString)!
             
-            if ( self.webexState != newState ) {
-                DispatchQueue.main.async {
-                    self.setState(newState:newState)
+            DispatchQueue.main.async {
+                
+                // Check if we've reached the predicated future state.
+                if (self.predicatedFutureState == newState ) {
+                    self.predicatedFutureState = nil
                 }
+                
+                if ( self.webexState != newState && self.predicatedFutureState == nil) {
+                        self.setState(newState:newState)
+                }
+                
+                self.startPolling()
             }
         }
+    }
+    
+    private func setPredictedFutureState(newFutureState:WebexState) {
+        predicatedFutureState = newFutureState
+        setState(newState: predicatedFutureState!)
     }
     
     private func setState(newState:WebexState) {
@@ -98,17 +115,18 @@ class WebexManager:NSObject  {
         // Adjust polling timeout if webex isn't open/active.
         switch webexState {
             case .stateActiveMuted:
-                startPolling(timeout:0.25)
+                timeoutInterval = 0.1
             case .stateActiveNotMuted:
-                startPolling(timeout:0.25)
+                timeoutInterval = 0.1
             case .stateInactiveNotRunning:
-                startPolling(timeout:4.0)
+                timeoutInterval = 4.0
             case .stateInactiveNoMeeting:
-                startPolling(timeout:1.0)
+                timeoutInterval = 1.0
             case .stateError: break
         }
     }
     
+    @discardableResult
     private func runScript(scriptName:String) -> String{
         
         let statusScript = Bundle.main.url(forResource: scriptName, withExtension: "scpt")!

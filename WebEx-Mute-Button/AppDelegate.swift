@@ -7,7 +7,6 @@
 //
 
 import Cocoa
-import SwiftUI
 
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
@@ -59,7 +58,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
 
-        menuItemPorts = NSMenuItem(title: "Button Status", action: #selector(toggleMute(_:)), keyEquivalent: "")
+        menuItemPorts = NSMenuItem(title: "Button Status", action: nil, keyEquivalent: "")
         menu.addItem(menuItemPorts!)
 
         menu.addItem(NSMenuItem.separator())
@@ -77,7 +76,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     }
 
     @objc func onWebexStateChange(_ notification:Notification? = nil) {
-        print("onWebexStateChange")
+
         menuItemStatus?.title = NSLocalizedString(WebexManager.shared.webexState.rawValue, comment:"")
         
         switch WebexManager.shared.webexState {

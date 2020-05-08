@@ -17,7 +17,7 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 ## Demo
 
-![Screenshot](http://jonreiling.com/webex/webex-video.jpg)
+[![Screenshot](http://jonreiling.com/webex/webex-video.jpg)](https://youtu.be/0hhCqMGTCo0)
 
 [View on Youtube](https://youtu.be/0hhCqMGTCo0)
 
