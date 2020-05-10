@@ -4,7 +4,7 @@
 #define GREEN_LED_PIN 16
 #define RED_LED_PIN 11
 
-OneButton btn = OneButton(BUTTON_PIN, HIGH, false);
+OneButton btn = OneButton(BUTTON_PIN);
 
 void setup() {
 
@@ -20,7 +20,6 @@ void loop() {
 
   checkSerialForCommand();
   btn.tick();
-  delay(1);       
 }
 
 static void handlePress() {

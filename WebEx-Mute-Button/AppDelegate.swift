@@ -26,12 +26,13 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         
         // Set up webex manager
         WebexManager.shared.startPolling()
-        NotificationCenter.default.addObserver(self, selector: #selector(onWebexStateChange(_:)), name: .didChangeWebexState, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onWebexStateChange), name: .didChangeWebexState, object: nil)
 
         // Set up external button manager
         ExternalStatusButtonManager.shared.reconnect()
-        NotificationCenter.default.addObserver(self, selector: #selector(updatePortsSubMenu(_:)), name: .didPortUpdate, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(onExternalButtonPress(_:)), name: .didPressExternalButton, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updateExternalButtonState), name: .didPortOpen, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(updatePortsSubMenu), name: .didPortUpdate, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(onExternalButtonPress), name: .didPressExternalButton, object: nil)
         
         // Construct our menu items
         constructMenu()
@@ -85,21 +86,35 @@ class AppDelegate: NSObject, NSApplicationDelegate {
             self.statusItem.button?.image = NSImage(named: "Icon")
             menuItemUnmute?.isEnabled = false
             menuItemMute?.isEnabled = false
-            ExternalStatusButtonManager.shared.setButtonState(state: .statusInactive)
         case .stateInactiveNoMeeting:
             self.statusItem.button?.image = NSImage(named: "Icon")
             menuItemUnmute?.isEnabled = false
             menuItemMute?.isEnabled = false
-            ExternalStatusButtonManager.shared.setButtonState(state: .statusInactive)
         case .stateActiveMuted:
             self.statusItem.button?.image = NSImage(named: "Icon-Muted")
             menuItemUnmute?.isEnabled = true
             menuItemMute?.isEnabled = false
-            ExternalStatusButtonManager.shared.setButtonState(state: .statusActiveRed)
         case .stateActiveNotMuted:
             self.statusItem.button?.image = NSImage(named: "Icon-Unmuted")
             menuItemUnmute?.isEnabled = false
             menuItemMute?.isEnabled = true
+        case .stateError:
+            break
+        }
+        
+        updateExternalButtonState()
+    }
+    
+    @objc func updateExternalButtonState(_ notification:Notification? = nil) {
+        switch WebexManager.shared.webexState {
+            
+        case .stateInactiveNotRunning:
+            ExternalStatusButtonManager.shared.setButtonState(state: .statusInactive)
+        case .stateInactiveNoMeeting:
+            ExternalStatusButtonManager.shared.setButtonState(state: .statusInactive)
+        case .stateActiveMuted:
+            ExternalStatusButtonManager.shared.setButtonState(state: .statusActiveRed)
+        case .stateActiveNotMuted:
             ExternalStatusButtonManager.shared.setButtonState(state: .statusActiveGreen)
         case .stateError:
             break

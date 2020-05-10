@@ -12,6 +12,7 @@ import ORSSerial
 extension Notification.Name {
     static let didPressExternalButton = Notification.Name("didPressExternalButton")
     static let didPortUpdate = Notification.Name("portUpdate")
+    static let didPortOpen = Notification.Name("didPortOpen")
 }
 
 enum ExternalStatusButtonState:String {
@@ -114,10 +115,10 @@ class ExternalStatusButtonManager:NSObject, ORSSerialPortDelegate  {
     }
     
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
-        
+
         // Save the successfully opened port for re-use in the future
         UserDefaults.standard.set(serialPort.path, forKey: "preferredPort")
-        NotificationCenter.default.post(name: .didPortUpdate, object: nil)
+        NotificationCenter.default.post(name: .didPortOpen, object: nil)
     }
     
     func serialPortWasClosed(_ serialPort: ORSSerialPort) {
