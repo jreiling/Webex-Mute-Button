@@ -13,11 +13,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     var activity: NSObjectProtocol?
     let statusItem = NSStatusBar.system.statusItem(withLength:NSStatusItem.squareLength)
-    
+    var pushToTalkEnabled = false
     var menuItemStatus:NSMenuItem?
     var menuItemMute:NSMenuItem?
     var menuItemUnmute:NSMenuItem?
     var menuItemPorts:NSMenuItem?
+    var menuItemPushToTalk:NSMenuItem?
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
@@ -33,7 +34,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         NotificationCenter.default.addObserver(self, selector: #selector(updateExternalButtonState), name: .didPortOpen, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(updatePortsSubMenu), name: .didPortUpdate, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(onExternalButtonPress), name: .didPressExternalButton, object: nil)
-        
+        NotificationCenter.default.addObserver(self, selector: #selector(onExternalButtonRelease), name: .didReleaseExternalButton, object: nil)
+
         // Construct our menu items
         constructMenu()
     }
@@ -59,6 +61,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
         menu.addItem(NSMenuItem.separator())
 
+        menuItemPushToTalk = NSMenuItem(title: "Push to Talk", action: #selector(togglePushToTalk(_:)), keyEquivalent: "")
+        menu.addItem(menuItemPushToTalk!)
+
+        menu.addItem(NSMenuItem.separator())
+
         menuItemPorts = NSMenuItem(title: "Button Status", action: nil, keyEquivalent: "")
         menu.addItem(menuItemPorts!)
 
@@ -74,6 +81,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     @objc func toggleMute(_ sender: AnyObject?) {
         
         WebexManager.shared.toggleMute()
+    }
+    
+    @objc func togglePushToTalk(_ sender: AnyObject?) {
+        pushToTalkEnabled.toggle()
+        menuItemPushToTalk?.state = pushToTalkEnabled ? .on : .off
     }
 
     @objc func onWebexStateChange(_ notification:Notification? = nil) {
@@ -123,7 +135,18 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     @objc func onExternalButtonPress(_ notification:Notification) {
         
-        WebexManager.shared.toggleMute()
+        if ( pushToTalkEnabled ) {
+            WebexManager.shared.unmute()
+        } else {
+            WebexManager.shared.toggleMute()
+        }
+    }
+    
+    @objc func onExternalButtonRelease(_ notification:Notification){
+        
+        if ( pushToTalkEnabled ) {
+            WebexManager.shared.mute()
+        }
     }
     
     @objc func updatePortsSubMenu(_ notification:Notification? = nil) {
