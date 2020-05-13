@@ -11,6 +11,7 @@ import ORSSerial
 
 extension Notification.Name {
     static let didPressExternalButton = Notification.Name("didPressExternalButton")
+    static let didReleaseExternalButton = Notification.Name("didReleaseExternalButton")
     static let didPortUpdate = Notification.Name("portUpdate")
     static let didPortOpen = Notification.Name("didPortOpen")
 }
@@ -19,6 +20,11 @@ enum ExternalStatusButtonState:String {
     case statusInactive = "s0"
     case statusActiveGreen = "s1"
     case statusActiveRed = "s2"
+}
+
+enum ExternalStatusButtonAction:String {
+    case buttonPressed = "Pressed"
+    case buttonReleased = "Released"
 }
 
 class ExternalStatusButtonManager:NSObject, ORSSerialPortDelegate  {
@@ -100,18 +106,25 @@ class ExternalStatusButtonManager:NSObject, ORSSerialPortDelegate  {
         return false
     }
     
-    private func evaluateButtonValue( value:String ) {
-
-        // Check and see what the microcontroller just sent us.
-        if (value == "Press"){
+    private func evaluateButtonValue( rawValue:String ) {
+        
+        let value = ExternalStatusButtonAction(rawValue: rawValue)
+        
+        switch value {
+        case .buttonPressed:
             NotificationCenter.default.post(name: .didPressExternalButton, object: nil)
+        case .buttonReleased:
+            NotificationCenter.default.post(name: .didReleaseExternalButton, object: nil)
+        default:
+            print("invalid value from button", rawValue)
         }
+
     }
     
     func serialPort(_ serialPort: ORSSerialPort, didReceive data: Data) {
         
         let string = String(data: data, encoding: .utf8)!
-        evaluateButtonValue(value: string)
+        evaluateButtonValue(rawValue: string)
     }
     
     func serialPortWasOpened(_ serialPort: ORSSerialPort) {
