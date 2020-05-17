@@ -1,10 +1,10 @@
-#include <OneButton.h>
+#include <JC_Button.h>          // https://github.com/JChristensen/JC_Button
 
 #define BUTTON_PIN 2
 #define GREEN_LED_PIN 16
 #define RED_LED_PIN 11
 
-OneButton btn = OneButton(BUTTON_PIN);
+Button btn(BUTTON_PIN,25, true, false); 
 
 void setup() {
 
@@ -13,17 +13,25 @@ void setup() {
   pinMode(GREEN_LED_PIN, OUTPUT);
   pinMode(RED_LED_PIN, OUTPUT);
 
-  btn.attachClick(handlePress); 
+  btn.begin();
 }
 
 void loop() {
 
   checkSerialForCommand();
-  btn.tick();
+  checkForButtonActivity();
 }
 
-static void handlePress() {
-  Serial.print("Press");
+
+void checkForButtonActivity() {
+
+  btn.read();
+  
+  if (btn.wasPressed()) {
+    Serial.print("Pressed");
+  } else if (btn.wasReleased()){
+    Serial.print("Released");
+  }
 }
 
 void checkSerialForCommand() {
