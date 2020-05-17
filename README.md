@@ -21,11 +21,17 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 [View on Youtube](https://youtu.be/0hhCqMGTCo0)
 
+### Enclosure 1.0
+
+![Screenshot](http://jonreiling.com/webex/webex-enclosure-2.jpg)
+
+5/17/2020 - Updated enclosure to use a [60mm Large Arcade button](https://www.adafruit.com/product/1192) modified with a [RBG LED](https://www.adafruit.com/product/159), both from Adafruit. Shoutout to [this instructables post](https://www.instructables.com/id/Arcade-Button-RGB-LED-Conversion/) for the inspiration.
+
+It feels pretty awesome to mash that thing.
+
 ## What's next
 
-As you can see from the video, the status indicators and button are pretty raw. Next up: build a more permanent enclosure. (Perhaps an "On Air" sign?)
-
-And while this is handy for me as an individual, I could imagine this being incredibly useful as a way to let family members know that you're on a conference call. Just think: An external status sign outside your office/bedroom/closet door could be pretty cool...
+While this is handy for me as an individual, I could imagine this being incredibly useful as a way to let family members know that you're on a conference call. Just think: An external status sign outside your office/bedroom/closet door could be pretty cool...
 
 ## Closing thoughts
 
