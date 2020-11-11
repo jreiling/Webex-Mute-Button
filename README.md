@@ -1,7 +1,7 @@
 # Webex Mute Button
  Basic program and hardware for controlling Webex Mute Status
 
-![Screenshot](http://jonreiling.com/webex/webex-screenshot.png)
+![Screenshot](docs/images/webex-screenshot.png)
 
 ## The Problem
 
@@ -17,13 +17,13 @@ From there, a macOS swift app manages communication between Applescript and a [T
 
 ## Demo
 
-[![Screenshot](http://jonreiling.com/webex/webex-video.jpg)](https://youtu.be/0hhCqMGTCo0)
+[![Screenshot](docs/images/webex-video.jpg)](https://youtu.be/0hhCqMGTCo0)
 
 [View on Youtube](https://youtu.be/0hhCqMGTCo0)
 
 ### Enclosure 1.0
 
-![Screenshot](http://jonreiling.com/webex/webex-enclosure-2.jpg)
+![Screenshot](docs/images/webex-enclosure-2.jpg)
 
 5/17/2020 - Updated enclosure to use a [60mm Large Arcade button](https://www.adafruit.com/product/1192) modified with a [RBG LED](https://www.adafruit.com/product/159), both from Adafruit. Shoutout to [this instructables post](https://www.instructables.com/id/Arcade-Button-RGB-LED-Conversion/) for the inspiration.
 
